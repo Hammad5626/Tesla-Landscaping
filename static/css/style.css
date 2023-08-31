@@ -1,0 +1,2259 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+.section_1 {
+    background: #151515;
+    backdrop-filter: blur(2px);
+    padding: 11px 0 12px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+.navbar_brand {
+    color: #FFF !important;
+    font-family: 'segoe_ui';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.nav_link {
+    color: #FAFCFA !important;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.5px;
+    font-family: 'segoe_ui';
+    /* 150% */
+    padding: 0 !important;
+    height: 28px;
+    /* width: 45.31px; */
+}
+
+.href_active {
+    border-bottom: 2px solid #FAFCFA;
+    margin-bottom: 0 !important;
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none !important;
+    outline: none;
+    filter: brightness(10);
+}
+
+.quote_button {
+    color: #000;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    width: 100%;
+    width: 185.09px;
+    padding: 13px 0 13px 0;
+    border-radius: 4px;
+    background: #FAFCFA;
+    border: none;
+    margin-left: 14px;
+}
+
+.nav_ul {
+    gap: 27px;
+}
+
+.nav_link::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: "";
+    background-color: #FAFCFA;
+    transition: 0.3s !important;
+    height: 2px;
+}
+
+.nav_link:hover {
+    color: #ffffffff;
+}
+
+.nav_link:hover:after {
+    width: 45.31px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+/* section_2 css */
+.section_2 {
+    background-color: #151515;
+    padding: 213px 0 179.53px 0;
+}
+
+.powering_head {
+    width: 882px;
+}
+
+.powering_head h1 {
+    color: #FAFCFA;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    /* 112.5% */
+    letter-spacing: -2.995px;
+    margin-bottom: 0;
+}
+
+.powering_p {
+    width: 674px;
+    margin-top: 15px;
+}
+
+.powering_p p {
+    color: #939393;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.999px;
+
+    margin-bottom: 0;
+    /* 164.7% */
+}
+
+.section_1_image {
+    margin-top: 35px;
+}
+
+.section_1_image img {
+    width: 100%;
+    border-radius: 15px;
+    height: 600px;
+}
+
+/* section_3 css */
+.section_3 {
+    background-color: #1C1C1C;
+    padding: 136px 0 140px 0;
+}
+
+.services_title {
+    width: 569px;
+}
+
+.services_title h2 {
+    color: #FAFCFA;
+    font-family: 'Inter';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    /* 138.462% */
+    letter-spacing: 1.56px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+.services_title h3 {
+    color: #FAFCFA;
+    font-family: 'Inter';
+    font-size: 57.001px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 62.017px;
+    /* 108.8% */
+    letter-spacing: -1.71px;
+    margin-top: 19px;
+}
+
+.services_desc {
+    width: 527px;
+}
+
+.services_desc p {
+    color: #939393;
+    font-family: DM Sans;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.999px;
+    /* 164.7% */
+    margin-bottom: 0;
+    margin-top: 26px;
+}
+
+.card_row {
+    margin-top: 58px;
+}
+
+.services_card {
+    border-right: 1px solid rgba(250, 252, 250, 0.20);
+    /* height: 298px; */
+    padding: 149px 0 90px 37px;
+    display: flex;
+    align-items: end;
+}
+
+/* .card_title {
+    width: 119px;
+} */
+
+.card_title h4 {
+    color: #FAFCFA;
+    font-family: 'Inter';
+    font-size: 23.987px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24.784px;
+    margin-bottom: 0;
+    /* 120% */
+}
+
+/* section_4 css */
+.section_4 {
+    padding: 135px 0 171px 0;
+    background-color: #FAFCFA;
+}
+
+.navtab_button {
+    width: 642px;
+    padding: 39px 19px 39px 32px;
+    margin-top: 8px;
+    text-align: start;
+    background: none !important;
+    opacity: 0.2;
+    border: 2px solid #d3d6d5 !important;
+    border-radius: 0 !important;
+}
+
+.navtab_button h5 {
+    color: #171A20;
+    font-family: 'segoe_ui';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0;
+    /* 171.429% */
+}
+
+.navtab_button p {
+    color: #393C41;
+    font-family: 'segoe_ui';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 0;
+    margin-top: 4px;
+    /* 200% */
+}
+
+.navtab_button.active {
+    opacity: 1;
+    border: 2px solid #d3d6d5 !important;
+
+}
+
+.navtab_button.active h5 {
+    color: #171A20 !important;
+}
+
+.tab_open_image {
+    position: relative;
+    margin-top: 30px;
+}
+
+.solar_image {
+    width: 439.98px;
+    height: 560.73px;
+    border-radius: 14px;
+}
+
+.solar_image_man {
+    border-radius: 14px;
+    width: 408.27px;
+    height: 448.09px;
+    position: absolute;
+    top: 233px;
+    left: 111px;
+}
+
+.section_5 {
+    background-color: #151515;
+    padding: 256px 0 187px 0;
+}
+
+/* .maximum_durab {
+    width: 538px;
+} */
+
+.maximum_durab h5 {
+    color: #FAFCFA;
+    font-family: 'Inter';
+    font-size: 53.001px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 62.017px;
+    /* 108.8% */
+    letter-spacing: -1.71px;
+    margin-bottom: 0;
+}
+
+.maximum_durab p {
+    color: #939393;
+    font-family: 'segoe_ui';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.999px;
+    margin-bottom: 0;
+    margin-top: 32px;
+}
+
+.maximum_durab_image {
+    width: 100%;
+    /* height: 630px; */
+}
+
+.maximum_durab_colum {
+    display: flex;
+    align-items: center;
+}
+
+.less_impact1 {
+    justify-content: end;
+    display: flex;
+    align-items: center;
+}
+
+.less_impact2 {
+    width: 474px;
+}
+
+.less_impact_row {
+    margin-top: 71px;
+}
+
+.leaks_row {
+    margin-top: 71px;
+}
+
+.section_6 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_image {
+    width: 100%;
+    height: 681px;
+}
+
+.play_button {
+    color: rgba(255, 255, 255, 0.90);
+    text-align: center;
+    font-family: 'DM Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100px;
+    /* 714.286% */
+    letter-spacing: 2px;
+    display: flex;
+    width: 101px;
+    height: 101px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border-radius: 50px;
+    border: 2px solid #FFF;
+    position: absolute;
+}
+
+.section_7 {
+    padding: 131px 0 131px 0;
+}
+
+.contact_our_sec {
+    width: 488px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.contact_our_sec h6 {
+    color: #171A20;
+    font-family: 'segoe_ui';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    /* 138.462% */
+    letter-spacing: 1.56px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.contact_our_sec h1 {
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 57.001px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 62.017px;
+    /* 108.8% */
+    letter-spacing: -1.71px;
+    margin-bottom: 0;
+}
+
+.contact_our_sec p {
+    color: #393C41;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.999px;
+    margin-bottom: 0;
+    /* 174.994% */
+}
+
+.request_quote_button {
+    border-radius: 4px;
+    border: 3px solid #171A20;
+    width: 204px;
+    background: none;
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8px;
+    /* 120% */
+    padding: 11.59px 0 11.41px 0;
+}
+
+.section_8 {
+    background-color: #000;
+    padding: 84px 0 84px 0;
+}
+
+/* footer css */
+.footer_top_item {
+    padding-bottom: 38px;
+    border-bottom: 1px solid #3F3F3F;
+}
+
+.footer_header h6 {
+    color: #FFF;
+    font-family: 'segoe_ui';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0;
+}
+
+.footer_item {
+    display: flex;
+    gap: 50px;
+    width: 480.45px;
+}
+
+.footer_item a {
+    text-decoration: none;
+    color: #FAFCFA;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.5px;
+    /* 140.625% */
+}
+
+.footer_bottom_item {
+    padding-top: 39px;
+}
+
+.footer_top_item_1 {
+    display: flex;
+    width: 995px;
+    align-items: flex-start;
+    gap: 310px;
+}
+
+.footer_header {
+    width: 167px;
+}
+
+.footer_bottom_item p {
+    color: #939393;
+    font-family: 'DM Sans';
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28.22px;
+    margin-bottom: 0;
+}
+
+.footer_header a {
+    text-decoration: none;
+}
+
+.dial_number {
+    text-decoration: none;
+    color: #FAFCFA;
+    font-family: 'Inter';
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    /* 157.895% */
+    letter-spacing: -0.4px;
+}
+
+.dial_number_colum {
+    text-align: start;
+}
+
+/* About css */
+.about_section_1 {
+    padding: 250px 0 278px 0;
+    background-color: #151515;
+}
+
+.about_section_1_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about_section_1_item h5 {
+    width: 882px;
+    color: #FAFCFA;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    letter-spacing: -2.995px;
+    margin-bottom: 0;
+}
+
+.about_section_1_item p {
+    width: 1032px;
+    color: #939393;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27.999px;
+    margin-bottom: 0;
+    margin-top: 102px;
+    /* 164.7% */
+}
+
+/* gallery css */
+.gallery_section_1 {
+    padding: 250px 0 362px 0;
+    background-color: #151515;
+}
+
+/* .gallery_section_1_item{
+    display: flex;
+    justify-content: center;
+} */
+
+.gallery_section_1_item {
+    padding: 0 49px;
+}
+
+.gallery_section_1_item h4 {
+    /* width: 882px; */
+    color: #FAFCFA;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    /* 112.5% */
+    letter-spacing: -2.995px;
+    margin-bottom: 0;
+}
+
+.gallery_image_section {
+    margin-top: 86px;
+}
+
+.gallery_image_1 {
+    width: 100%;
+    height: 243px;
+    margin-bottom: 21px;
+}
+
+.gallery_image_3 {
+    width: 100%;
+    height: 507px;
+}
+
+/* Quote 1 css */
+.quote_section_1 {
+    height: 100vh;
+    background-color: #FAFCFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.house_detail_sec h2 {
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 57px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    /* 157.895% */
+    letter-spacing: -2.995px;
+    margin-bottom: 0;
+}
+
+.address_input {
+    padding: 28.5px 50px 28.5px 78px;
+    width: 800px;
+    border-radius: 4px;
+    border: 2px solid rgba(23, 26, 32, 0.40);
+    background: none;
+    outline: 0;
+    color: rgba(23, 26, 32, 0.40);
+    font-family: 'segoe_ui';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8px;
+    margin-top: 21px;
+    /* 84% */
+}
+
+.search_icon {
+    font-size: 29px;
+    color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 35px;
+    top: 52px;
+}
+
+.quote1_button {
+    color: #FAFCFA;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8px;
+    /* 120% */
+    border-radius: 4px;
+    border: 3px solid #171A20;
+    background-color: #171A20;
+    width: 204px;
+    padding: 11.59px 0 11.41px 0;
+}
+
+.quote1_button_sec {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+/* quote2 css  */
+.quote2_section_1 {
+    background-color: #FAFCFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 183px 0 114px 0;
+}
+
+.mark_house_image {
+    width: 100%;
+    height: 539px;
+    margin-top: 27px;
+}
+
+/* quote 3 */
+.quote3_section_1{
+    padding-bottom: 225px;
+}
+.choose_material_card {
+    background-color: rgba(23, 26, 32, 0.05);
+    padding-bottom: 33px;
+}
+
+.card_img {
+    height: 230px;
+    width: 100%;
+}
+
+.card_section {
+    padding: 31px 160px 39px 160px;
+}
+
+.card_body h5 {
+    padding-top: 27px;
+    color: #171A20;
+    font-family: 'segoe_ui';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    /* 90% */
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    opacity: 0.9;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.card_body h6 {
+    margin-bottom: 0;
+    color: #171A20;
+    font-family: 'segoe_ui';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 150% */
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card_body p {
+    color: #171A20;
+    font-family: 'segoe_ui';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 18px;
+    /* 150% */
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    opacity: 0.9;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* quote 4 css */
+.your_home h3 {
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.your_home p {
+    color: #171A20;
+    font-family: 'segoe_ui';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 150% */
+    letter-spacing: 0.3px;
+    margin-bottom: 0;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.vector_image {
+    display: flex;
+    justify-content: center;
+    margin-top: 33px;
+}
+
+.vector_image img {
+    width: 116px;
+    height: 100px;
+}
+
+.solar_size_section {
+    margin-top: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.solar_size_section h4 {
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.solar_size_section h5 {
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.solar_price {
+    width: 271px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 37px;
+}
+
+.solar_price h6 {
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    /* 128.571% */
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+/* quote 5 css */
+.order_summary {
+    margin-top: 41px;
+    width: 275px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order_summary p {
+    margin-bottom: 0;
+    margin-top: 0;
+    color: #171A20;
+    text-align: center;
+    font-family: 'segoe_ui';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    /* 128.571% */
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+}
+
+.order_summary h6 {
+    opacity: 0.9;
+    color: #171A20;
+    font-family: 'segoe_ui';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+.order_summary_cash{
+    margin-top: 12px;
+    margin-bottom: 58px;
+}
+
+.quote5_section_1{
+    padding-bottom: 449px;
+}
+
+@media screen and (min-width : 1400px){
+    .quote_section_1{
+        padding: 295px 0 406px 0;
+        height: auto;
+    }
+}
+@media screen and (max-width : 1400px) {
+    .search_icon {
+        font-size: 28px;
+        top: 51px;
+    }
+    .address_input {
+        padding: 26.5px 45px 26.5px 74px;
+        width: 719px;
+    }
+
+    .about_section_1 {
+        padding: 230px 0 230px 0;
+    }
+
+    .section_5 {
+        padding: 210px 0 187px 0;
+    }
+
+    .navtab_button h5 {
+        font-size: 26px;
+    }
+
+    .navtab_button p {
+        font-size: 13px;
+    }
+
+    .navtab_button {
+        width: 598px;
+        padding: 34px 18px 34px 30px;
+    }
+
+    .solar_image {
+        width: 390.98px;
+        height: 519.73px;
+    }
+
+    .solar_image_man {
+        width: 346.27px;
+        height: 410.09px;
+        top: 220px;
+        left: 105px;
+    }
+
+    .card_title h4 {
+        font-size: 21.987px;
+    }
+
+    .services_card {
+        border-right: 1px solid rgba(250, 252, 250, 0.20);
+        padding: 149px 0 84px 30px;
+    }
+
+    .services_title {
+        width: 435px;
+    }
+
+    .services_desc {
+        width: 500px;
+    }
+
+    .powering_head {
+        width: 681px;
+    }
+
+    .powering_head h1 {
+        font-size: 64px;
+    }
+
+    .powering_p {
+        width: 572px;
+        margin-top: 0;
+    }
+
+    .powering_p p {
+        font-size: 14px;
+
+    }
+}
+
+@media screen and (max-width : 1200px) {
+    .quote3_section_1 {
+        padding-bottom: 200px !important;
+    }
+    .quote5_section_1 {
+        padding-bottom: 325px !important;
+    }
+    .your_home h3 {
+        font-size: 19px;
+    }
+
+    .vector_image img {
+        width: 110px;
+        height: 94px;
+    }
+
+    .solar_size_section h4 {
+        font-size: 19px;
+    }
+
+    .solar_price h6 {
+        font-size: 13px;
+    }
+
+    .solar_price {
+        width: 264px;
+    }
+
+    .card_section {
+        padding: 20px 90px 30px 90px;
+    }
+
+    .quote2_section_1 {
+        padding: 160px 0 114px 0;
+    }
+
+    .house_detail_sec h2 {
+        color: #171A20;
+        text-align: center;
+        font-family: 'segoe_ui';
+        font-size: 54px;
+    }
+
+    .address_input {
+        padding: 21.5px 40px 21.5px 65px;
+        width: 634px;
+        font-size: 19px;
+    }
+
+    .house_detail_sec h2 {
+        font-size: 49px;
+    }
+
+    .quote1_button {
+        width: 174px;
+    }
+
+    .search_icon {
+        font-size: 28px;
+        left: 30px;
+        top: 46px;
+    }
+
+    .gallery_section_1_item h4 {
+        font-size: 67px;
+    }
+
+    .gallery_image_1 {
+        height: 199px;
+    }
+
+    .gallery_image_3 {
+        height: 419px;
+    }
+
+    .gallery_section_1 {
+        padding: 200px 0 300px 0;
+    }
+
+    .about_section_1_item h5 {
+        width: 639px;
+        font-size: 67px;
+    }
+
+    .about_section_1_item p {
+        width: 881px;
+        font-size: 15px;
+    }
+
+    .about_section_1 {
+        padding: 200px 0 200px 0;
+    }
+
+    .footer_header h6 {
+        font-size: 19px;
+    }
+
+    .footer_item a {
+        font-size: 15px;
+    }
+
+    .dial_number {
+        font-size: 18px;
+    }
+
+    .footer_item {
+        gap: 45px;
+        width: 405.45px;
+    }
+
+    .footer_top_item_1 {
+        width: auto;
+        gap: 236px;
+    }
+
+    .footer_bottom_item p {
+        font-size: 16px;
+    }
+
+    .section_5 {
+        padding: 200px 0 170px 0;
+    }
+
+    .section_image {
+        height: 600px;
+    }
+
+    .play_button {
+        font-size: 13px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .less_impact2 {
+        width: 387px;
+    }
+
+    .maximum_durab h5 {
+        font-size: 45.001px;
+    }
+
+    .maximum_durab p {
+        font-size: 13px;
+    }
+
+    .navtab_button {
+        width: 500px;
+        padding: 30px 16px 30px 24px;
+    }
+
+    .navtab_button h5 {
+        font-size: 24px;
+    }
+
+    .navtab_button p {
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .solar_image {
+        width: 305.98px;
+        height: 455.73px;
+    }
+
+    .solar_image_man {
+        width: 272.27px;
+        height: 347.09px;
+        top: 193px;
+        left: 91px;
+    }
+
+    .card_title h4 {
+        font-size: 18.987px;
+    }
+
+    .services_card {
+        padding: 130px 0 70px 0px;
+    }
+
+    .services_title h3 {
+        font-size: 49.001px;
+        line-height: 60.017px;
+    }
+
+    .services_title h2 {
+        font-size: 12px;
+    }
+
+    .services_desc {
+        width: 445px;
+    }
+
+    .services_desc p {
+        font-size: 14px;
+        line-height: 25.999px;
+    }
+
+    .section_1 {
+        padding: 12px 0 13px 0;
+    }
+
+    .nav_ul {
+        gap: 24px;
+    }
+
+    .quote_button {
+        font-size: 12px;
+        width: 149.09px;
+        padding: 12px 0 12px 0;
+    }
+
+    .nav_link {
+        font-size: 14px;
+    }
+
+    .navbar_brand {
+        font-size: 19px;
+        gap: 20px;
+    }
+
+    .powering_head {
+        width: 617px;
+    }
+
+    .powering_head h1 {
+        font-size: 55px;
+        line-height: 80px;
+        letter-spacing: -1.995px;
+    }
+
+    .powering_p {
+        width: 499px;
+    }
+
+    .powering_p p {
+        font-size: 12px;
+    }
+
+    .section_1_image img {
+        height: 500px;
+    }
+
+    .section_2 {
+        padding: 180px 0 150.53px 0;
+    }
+}
+
+@media screen and (max-width : 992px) {
+    .quote3_section_1 {
+        padding-bottom: 190px !important;
+    }
+    .quote5_section_1 {
+        padding-bottom: 310px !important;
+    }
+    .order_summary h6 {
+        font-size: 13px;
+    }
+    .order_summary_cash {
+        margin-bottom: 50px;
+    }
+    .order_summary p {
+        font-size: 13px;
+    }
+    .your_home h3 {
+        font-size: 18px;
+        margin-top: 3px;
+    }
+
+    .vector_image img {
+        width: 105px;
+        height: 90px;
+    }
+
+    .solar_size_section {
+        margin-top: 95px;
+    }
+
+    .solar_price h6 {
+        font-size: 12px;
+    }
+
+    .solar_price {
+        width: 260px;
+        margin-top: 7px;
+        margin-bottom: 30px;
+    }
+
+    .solar_size_section h4 {
+        font-size: 18px;
+    }
+
+    .quote2_section_1 {
+        padding: 150px 0 114px 0;
+    }
+
+    .mark_house_image {
+        height: 400px;
+        margin-top: 21px;
+    }
+
+    .house_detail_sec h2 {
+        font-size: 45px;
+        letter-spacing: -0.995px;
+        line-height: 79px;
+        margin-top: 16px;
+    }
+
+    .address_input {
+        padding: 19.5px 35px 19.5px 60px;
+        width: 560px;
+        font-size: 18px;
+    }
+
+    .search_icon {
+        font-size: 23px;
+        left: 30px;
+        top: 44px;
+    }
+
+    .quote1_button {
+        width: 150px;
+        padding: 10.59px 0 10.41px 0;
+    }
+
+    .gallery_section_1 {
+        padding: 170px 0 250px 0;
+    }
+
+    .gallery_section_1_item {
+        padding: 0 39px;
+    }
+
+    .gallery_image_1 {
+        height: 144px;
+    }
+
+    .gallery_image_3 {
+        height: 309px;
+    }
+
+    .gallery_section_1_item h4 {
+        font-size: 54px;
+        letter-spacing: -0.995px;
+    }
+
+    .gallery_image_section {
+        margin-top: 60px;
+    }
+
+    .about_section_1_item h5 {
+        width: auto;
+        font-size: 54px;
+        letter-spacing: -0.995px;
+    }
+
+    .about_section_1_item p {
+        font-size: 14px;
+        width: 658px;
+        margin-top: 65px;
+    }
+
+    .about_section_1 {
+        padding: 170px 0 170px 0;
+    }
+
+    .footer_header h6 {
+        font-size: 18px;
+    }
+
+    .footer_item a {
+        font-size: 14px;
+    }
+
+    .footer_top_item_1 {
+        gap: 140px;
+    }
+
+    .footer_top_item {
+        padding-bottom: 30px;
+    }
+
+    .footer_bottom_item {
+        padding-top: 30px;
+    }
+
+    .footer_bottom_item p {
+        font-size: 14px;
+    }
+
+    .dial_number {
+        font-size: 15px;
+    }
+
+    .dial_number_colum {
+        text-align: end;
+    }
+
+    .footer_item {
+        gap: 40px;
+        width: auto;
+    }
+
+    .section_5 {
+        padding: 160px 0 160px 0;
+    }
+
+    .section_image {
+        height: 500px;
+    }
+
+    .play_button {
+        font-size: 12px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact_our_sec h1 {
+        font-size: 48.001px;
+    }
+
+    .contact_our_sec h6 {
+        font-size: 12px;
+    }
+
+    .contact_our_sec p {
+        font-size: 15px;
+    }
+
+    .request_quote_button {
+        width: 194px;
+        font-size: 13px;
+    }
+
+    .contact_our_sec {
+        width: 396px;
+        gap: 24px;
+    }
+
+    .less_impact2 {
+        width: 322px;
+    }
+
+    .maximum_durab h5 {
+        font-size: 35.001px;
+        line-height: 40.017px;
+    }
+
+    .maximum_durab p {
+        font-size: 12px;
+        margin-top: 21px;
+        line-height: 24.999px;
+    }
+
+    .section_4 {
+        padding: 120px 0 152px 0;
+    }
+
+    .navtab_button h5 {
+        font-size: 17px;
+    }
+
+    .navtab_button p {
+        font-size: 11px;
+        line-height: 21px;
+    }
+
+    .solar_image {
+        width: 280.98px;
+        height: 380.73px;
+    }
+
+    .solar_image_man {
+        width: 246.27px;
+        height: 297.09px;
+        top: 161px;
+        left: 84px;
+    }
+
+    .navtab_button {
+        width: auto;
+        padding: 15px 16px 15px 16px;
+    }
+
+    .section_3 {
+        padding: 120px 0 127px 0;
+    }
+
+    .section_1 {
+        padding: 20px 0 20px 0;
+    }
+
+    .card_title h4 {
+        font-size: 15.987px;
+        line-height: 19.784px;
+    }
+
+    .services_card {
+        padding: 130px 0 60px 0px;
+    }
+
+    .services_title {
+        width: auto;
+    }
+
+    .services_desc {
+        width: auto;
+    }
+
+    .services_title h3 {
+        font-size: 37.001px;
+        line-height: 48.017px;
+        margin-top: 15px;
+    }
+
+    .services_desc p {
+        font-size: 12px;
+        line-height: 22.999px;
+        margin-top: 20px;
+    }
+
+    .services_title h2 {
+        font-size: 10px;
+    }
+
+    .nav_ul {
+        margin-top: 32px;
+    }
+
+    .powering_head {
+        width: 593px;
+    }
+
+    .powering_head h1 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+
+    .powering_p p {
+        font-size: 11px;
+        line-height: 24.999px;
+
+    }
+
+    .powering_p {
+        width: 445px;
+    }
+
+    .section_1_image img {
+        height: 448px;
+    }
+
+    .section_2 {
+        padding: 170px 0 140.53px 0;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .quote5_section_1 {
+        padding-bottom: 270px !important;
+    }
+    .quote5_section_1 {
+        padding-bottom: 250px !important;
+    }
+    .card_img {
+        height: 220px;
+    }
+
+    .card_section {
+        padding: 20px 0 20px 0;
+    }
+
+    .quote2_section_1 {
+        padding: 130px 0 114px 0;
+    }
+
+    .mark_house_image {
+        height: 330px;
+        margin-top: 18px;
+    }
+
+    .address_input {
+        padding: 16.5px 30px 16.5px 47px;
+        width: 464px;
+        font-size: 17px;
+    }
+
+    .house_detail_sec h2 {
+        font-size: 41px;
+        letter-spacing: 0.005px;
+        line-height: 76px;
+    }
+
+    .quote1_button {
+        width: 143px;
+        padding: 9.59px 0 9.41px 0;
+        font-size: 13px;
+    }
+
+    .search_icon {
+        font-size: 20px;
+        left: 23px;
+        top: 43px;
+    }
+
+    .gallery_section_1 {
+        padding: 160px 0 220px 0;
+    }
+
+    .gallery_image_1_colum {
+        display: flex;
+        gap: 14px;
+    }
+
+    .gallery_section_1_item h4 {
+        font-size: 49px;
+        letter-spacing: 0.005px;
+    }
+
+    .gallery_image_1 {
+        margin-bottom: 14px;
+    }
+
+    .about_section_1_item h5 {
+        font-size: 49px;
+        letter-spacing: 0.005px;
+    }
+
+    .gallery_image_section {
+        margin-top: 50px;
+    }
+
+    .about_section_1_item p {
+        font-size: 12px;
+        width: auto;
+        margin-top: 45px;
+        line-height: 24.999px;
+    }
+
+    .about_section_1 {
+        padding: 160px 0 130px 0;
+    }
+
+    .footer_item {
+        gap: 35px;
+    }
+
+    .section_image {
+        height: 400px;
+    }
+
+    .footer_top_item_1 {
+        gap: 80px;
+    }
+
+    .footer_bottom_item p {
+        font-size: 14px;
+    }
+
+    .footer_bottom_item {
+        padding-top: 25px;
+    }
+
+    .footer_top_item {
+        padding-bottom: 25px;
+    }
+
+    .dial_number_colum {
+        text-align: start;
+        margin-top: 6px;
+    }
+
+    .dial_number {
+        font-size: 14px;
+    }
+
+    .play_button {
+        font-size: 11px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact_our_sec p {
+        font-size: 14px;
+    }
+
+    .contact_our_sec h1 {
+        font-size: 47.001px;
+    }
+
+    .section_7 {
+        padding: 120px 0 120px 0;
+    }
+
+    .less_impact2 {
+        width: auto;
+    }
+
+    .less_impact_row {
+        flex-direction: column-reverse;
+        margin-top: 32px;
+    }
+
+    .leaks_row {
+        margin-top: 32px;
+    }
+
+    .less_impact1 {
+        justify-content: start;
+    }
+
+    .less_impact2 {
+        margin-top: 32px;
+    }
+
+    .section_5 {
+        padding: 120px 0 120px 0;
+    }
+
+    .maximum_durab p {
+        font-size: 13px;
+    }
+
+    .maximum_durab_image {
+        width: 100%;
+        height: 400px;
+        margin-top: 32px;
+    }
+
+    .solar_image {
+        width: 272.98px;
+        height: 343.73px;
+    }
+
+    .solar_image_man {
+        width: 247.27px;
+        height: 284.09px;
+        top: 145px;
+        left: 79px;
+    }
+
+    /* .tab_open_image {
+        position: relative;
+        margin-top: 14px;
+        height: 438px;
+    } */
+    .walls_card {
+        border-right: 0;
+    }
+
+    .drain_colum {
+        margin-top: 30px;
+    }
+
+    .services_desc p {
+        margin-top: 13px;
+    }
+
+    .powering_head h1 {
+        font-size: 42px;
+        line-height: 60px;
+        letter-spacing: -0.995px;
+    }
+
+    .powering_head {
+        width: 481px;
+    }
+
+    .powering_p {
+        width: 318px;
+    }
+
+    .powering_p p {
+        line-height: 21.999px;
+    }
+
+    .section_1_image img {
+        height: 400px;
+    }
+
+    .section_2 {
+        padding: 160px 0 135.53px 0;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.4em;
+        height: 1.4em;
+    }
+}
+
+@media screen and (max-width : 576px) {
+    .quote3_section_1 {
+        padding-bottom: 170px !important;
+    }
+    .quote5_section_1 {
+        padding-bottom: 230px !important;
+    }
+    .solar_size_section {
+        margin-top: 85px;
+    }
+    .order_summary_cash {
+        margin-bottom: 40px;
+        margin-top: 10px !important;
+    }
+    .order_summary p {
+        font-size: 13px !important;
+    }
+    .order_summary {
+        margin-top: 32px;
+        width: 237px;
+    }
+    .your_home h3 {
+        font-size: 16px;
+        margin-top: 0px;
+    }
+
+    .your_home p {
+        font-size: 11px;
+        margin-top: 6px;
+    }
+
+    .solar_size_section h5 {
+        font-size: 11px;
+        margin-top: 6px;
+    }
+
+    .solar_price h6 {
+        font-size: 11px;
+    }
+
+    .solar_price {
+        width: 243px;
+        margin-top: 6px;
+        margin-bottom: 28px;
+    }
+
+    .vector_image img {
+        width: 95px;
+        height: 85px;
+    }
+
+    .solar_size_section h4 {
+        font-size: 16px;
+    }
+
+    .mark_house_image {
+        height: 280px;
+        margin-top: 15px;
+    }
+
+    .address_input {
+        padding: 15.5px 25px 15.5px 40px;
+        width: 354px;
+        font-size: 16px;
+        margin-top: 13px;
+    }
+
+    .search_icon {
+        font-size: 19px;
+        left: 16px;
+        top: 33px;
+    }
+
+    .quote1_button {
+        width: 130px;
+        padding: 7.59px 0 7.41px 0;
+    }
+
+    .house_detail_sec h2 {
+        font-size: 38px;
+        line-height: 71px;
+    }
+
+    .gallery_section_1 {
+        padding: 160px 0 160px 0;
+    }
+
+    .gallery_section_1_item h4 {
+        font-size: 43px;
+        letter-spacing: 1.005px;
+    }
+
+    .gallery_section_1_item {
+        padding: 0px 0px;
+    }
+
+    .gallery_image_1_colum {
+        display: flex;
+        gap: 10px;
+    }
+
+    .gallery_image_1 {
+        margin-bottom: 10px;
+    }
+
+    .navbar-toggler {
+        padding: 0;
+    }
+
+    .about_section_1_item h5 {
+        font-size: 43px;
+        letter-spacing: 1.005px;
+    }
+
+    .about_section_1_item p {
+        font-size: 12px;
+        margin-top: 36px;
+        line-height: 24.999px;
+    }
+
+    .section_8 {
+        padding: 70px 0 70px 0;
+    }
+
+    .footer_bottom_item p {
+        text-align: center;
+    }
+
+    .dial_number_colum {
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .section_image {
+        height: 300px;
+    }
+
+    .play_button {
+        font-size: 10px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer_header {
+        width: auto;
+    }
+
+    .footer_top_item_1 {
+        display: unset;
+    }
+
+    .footer_header h6 {
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .footer_item {
+        justify-content: center;
+        margin-top: 34px;
+    }
+
+    .contact_our_sec {
+        width: 366px;
+    }
+
+    .contact_our_sec h1 {
+        font-size: 43.001px;
+        letter-spacing: -0.71px;
+        line-height: 56.017px;
+    }
+
+    .contact_our_sec {
+        gap: 22px;
+    }
+
+    .contact_our_sec p {
+        font-size: 13px;
+    }
+
+    .request_quote_button {
+        width: 175px;
+        font-size: 13px;
+    }
+
+    .contact_our_sec h6 {
+        font-size: 11px;
+    }
+
+    .maximum_durab h5 {
+        font-size: 32.001px;
+    }
+
+    .maximum_durab_image {
+        height: 300px;
+    }
+
+    .section_4 {
+        padding: 100px 0 152px 0;
+    }
+
+    .navtab_button p {
+        font-size: 10px;
+        line-height: 19px;
+    }
+
+    .navtab_button {
+        width: auto;
+        padding: 13px 10px 13px 10px;
+    }
+
+    .section_3 {
+        padding: 100px 0 100px 0;
+    }
+
+    .card_row {
+        margin-top: 0;
+    }
+
+    .drain_colum {
+        margin-top: 0;
+    }
+
+    .services_card {
+        border-bottom: 1px solid rgba(250, 252, 250, 0.20);
+        border-right: none;
+        padding: 100px 0 40px 0px;
+    }
+
+    .services_title h3 {
+        font-size: 32.001px;
+        line-height: 44.017px;
+        margin-top: 12px;
+    }
+
+    .powering_head h1 {
+        font-size: 32px;
+        line-height: 55px;
+        letter-spacing: -0.995px;
+    }
+
+    .powering_head {
+        width: 350px;
+    }
+
+    .powering_p {
+        width: 290px;
+    }
+
+    .powering_p p {
+        line-height: 20.999px;
+        font-size: 10px;
+    }
+
+    .section_1_image img {
+        height: 300px;
+    }
+
+    .section_2 {
+        padding: 150px 0 120.53px 0;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.3em;
+        height: 1.3em;
+    }
+
+}
+
+@media screen and (max-width : 435px) {
+    .gallery_image_1_colum {
+        display: unset;
+    }
+}
+
+@media screen and (max-width : 400px) {
+    .address_input {
+        padding: 13.5px 15px 13.5px 35px;
+        width: 305px;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .house_detail_sec h2 {
+        font-size: 35px;
+    }
+
+    .quote1_button {
+        width: 119px;
+        padding: 6.41px 0 6.41px 0;
+        font-size: 12px;
+    }
+
+    .search_icon {
+        font-size: 18px;
+        left: 12px;
+        top: 26px;
+    }
+
+    .section_image {
+        height: 250px;
+    }
+
+    .play_button {
+        font-size: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .maximum_durab h5 {
+        font-size: 28.001px;
+        line-height: 39.017px;
+    }
+
+    .maximum_durab p {
+        font-size: 11px;
+    }
+
+    .maximum_durab_image {
+        height: 250px;
+    }
+
+    .navtab_button h5 {
+        font-size: 14px;
+    }
+
+    .navtab_button p {
+        font-size: 9px;
+        line-height: 19px;
+    }
+
+    .solar_image {
+        width: 193.98px;
+        height: 256.73px;
+    }
+
+    .solar_image_man {
+        width: 189.27px;
+        height: 213.09px;
+        top: 110px;
+        left: 51px;
+    }
+
+    .powering_head h1 {
+        font-size: 25px;
+        line-height: 43px;
+        letter-spacing: 0.005px;
+    }
+
+    .powering_head {
+        width: 290px;
+    }
+
+    .powering_p {
+        width: 250px;
+    }
+
+    .powering_p p {
+        line-height: 20.999px;
+        font-size: 10px;
+    }
+
+    .section_1_image img {
+        height: 200px;
+    }
+
+    .section_2 {
+        padding: 130px 0 100.53px 0;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+}
+
+@media screen and (max-width : 350px) {
+    .powering_head {
+        width: 255px;
+    }
+    .powering_head h1 {
+        font-size: 22px;
+    }
+    .quote5_section_1 {
+        padding-bottom: 200px !important;
+    }
+    
+    .address_input {
+        width: 246px;
+    }
+
+    .your_home h3 {
+        font-size: 15px;
+    }
+
+    .solar_price h6 {
+        font-size: 10px;
+    }
+
+    .solar_price {
+        width: 201px;
+    }
+
+    .solar_size_section h5 {
+        font-size: 10px;
+    }
+
+    .vector_image img {
+        width: 90px;
+        height: 80px;
+    }
+
+    .mark_house_image {
+        height: 200px;
+    }
+
+    .gallery_image_3 {
+        height: 250px;
+    }
+
+    .house_detail_sec h2 {
+        font-size: 32px;
+    }
+
+    .about_section_1_item h5 {
+        font-size: 41px;
+    }
+
+    .about_section_1_item p {
+        font-size: 11px;
+        width: auto;
+        margin-top: 25px;
+        line-height: 24.999px;
+    }
+
+    .footer_item {
+        gap: 28px;
+    }
+
+    .footer_bottom_item p {
+        font-size: 13px;
+    }
+
+    .dial_number {
+        font-size: 13px;
+    }
+
+    .contact_our_sec h6 {
+        font-size: 10px;
+    }
+
+    .contact_our_sec h1 {
+        font-size: 34.001px;
+        letter-spacing: -0.71px;
+        line-height: 50.017px;
+    }
+
+    .contact_our_sec p {
+        font-size: 12px;
+    }
+
+    .request_quote_button {
+        width: 160px;
+        font-size: 12px;
+        padding: 8.59px 0 9.41px 0;
+    }
+
+    .contact_our_sec {
+        gap: 20px;
+    }
+
+    .contact_our_sec {
+        width: 250px;
+    }
+}

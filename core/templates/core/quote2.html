@@ -1,0 +1,82 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block styles %}
+    <style>
+        #mapContainer {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+{% endblock %}
+
+{% block activeclass %}
+    <li class="nav-item">
+        <a  class="nav-link nav_link" aria-current="page" href="{% url 'index' %}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav_link" href="{% url 'gallery' %}">Gallery</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmjBa0bBtZgyrt_kaNV_I9anxcPYYQY1s&libraries=drawing&callback=initMap" async defer></script>
+    <!-- Quote Section 1 Start  -->
+    <div class="quote2_section_1">
+        <div class="container">
+            <div class="house_detail_sec">
+                <h2>Mark Your House</h2>
+                <div>
+                    <div id="mapContainer" class="mark_house_map"></div>
+                </div>
+                <div class="quote1_button_sec">
+                    <a href="{% url 'quote3' %}">
+                        <button type="button" class="quote1_button">Next</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function initMap() {
+            let lat = parseFloat('{{ request.GET.lat }}');
+            let lng = parseFloat('{{ request.GET.lng }}');
+            
+            let location = { lat: lat, lng: lng };
+            let pathCoordinates = [];
+            
+            let map = new google.maps.Map(document.getElementById('mapContainer'), {
+                center: location,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            });
+
+            let drawingManager = new google.maps.drawing.DrawingManager({
+                drawingMode: google.maps.drawing.OverlayType.POLYLINE,
+                drawingControl: true,
+                drawingControlOptions: {
+                    position: google.maps.ControlPosition.TOP_CENTER,
+                    drawingModes: ['polyline']
+                }
+            });
+            drawingManager.setMap(map);
+            
+            google.maps.event.addListener(drawingManager, 'polylinecomplete', function(polyline) {
+                let path = polyline.getPath();
+                path.forEach(function(latlng) {
+                    pathCoordinates.push({ lat: latlng.lat(), lng: latlng.lng() });
+                });
+
+                let coordinatesJSON = JSON.stringify(pathCoordinates);
+
+                window.location.href = '{% url "quote3" %}?coordinates=' + encodeURIComponent(coordinatesJSON);
+            });
+        }
+    
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>    
+{% endblock %}

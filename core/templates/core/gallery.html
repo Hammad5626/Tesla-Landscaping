@@ -1,0 +1,57 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block activeclass %}
+    <li class="nav-item">
+        <a  class="nav-link nav_link" aria-current="page" href="{% url 'index' %}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav_link href_active" href="{% url 'gallery' %}">Gallery</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <!-- Gallery Section 1 Start-->
+    <div class="gallery_section_1">
+        <div class="container">
+            <div class="gallery_section_1_item">
+                <h4>Gallery</h4>
+                <div class="gallery_image_section">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-5 col-sm-12 col-12 gallery_image_1_colum">
+                            <img src="{% static 'images/5.png' %}" alt="" class="gallery_image_1">
+                            <img src="{% static 'images/6.png' %}" alt="" class="gallery_image_1">
+                        </div>
+                        <div class="col-lg-8 col-md-7 col-sm-12 col-12">
+                            <img src="{% static 'images/7.png' %}" alt="" class="gallery_image_3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Section 1 End-->
+
+    <!-- contact our experts start  -->
+    <div class="section_7">
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="contact_our_sec">
+                <h6>contact our experts</h6>
+                <h1>Get Your Instant Free Quote Now</h1>
+                <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco .</p>
+                <div class="text-center">
+                    <a href="{% url 'quote1' %}">
+                        <button type="button" class="request_quote_button">Request Quote</button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- contact our experts end -->
+{% endblock %}

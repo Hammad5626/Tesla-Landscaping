@@ -1,0 +1,60 @@
+{% extends 'core/index.html' %}
+{% load static %}
+
+{% block activeclass %}
+    <li class="nav-item">
+        <a  class="nav-link nav_link" aria-current="page" href="{% url 'index' %}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link nav_link" href="{% url 'gallery' %}">Gallery</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <!--Your Home Section 1 Start  -->
+    <div class="quote2_section_1 quote3_section_1">
+        <div class="container">
+            <div class="house_detail_sec your_home">
+                <h2>Your Home</h2>
+                <h3>Your Address, street no, house no</h3>
+                <p class="house_size">Size of your house is 123940 ft</p>
+                <div class="vector_image">
+                    <img src="{% static 'images/Vector.svg' %}" alt="">
+                </div>
+                <div class="solar_size_section">
+                    <h4>Solar Size</h4>
+                    <h5>System sizing is an estimation based on your house size</h5>
+                    <div class="solar_price">
+                        <h6>6.885 KW Solar</h6>
+                        <h6>$16,552</h6>
+                    </div>
+                </div>
+                <div class="quote1_button_sec">
+                    <a href="{% url 'quote5' %}">
+                        <button type="button" class="quote1_button">Continue to Order</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var totalDistance = parseFloat('{{ request.GET.total_distance }}');
+        var selectedValue = parseFloat('{{ request.GET.selected_value }}');
+
+        var result = totalDistance * selectedValue;
+        
+        var houseSizeElement = document.querySelector('.house_size');
+        if (houseSizeElement) {
+            houseSizeElement.textContent = 'Size of your house is ' + totalDistance.toFixed(2) + ' ft';
+        }
+
+        var priceElement = document.querySelector('.solar_price h6:last-child');
+            if (priceElement) {
+                priceElement.textContent = '$' + result.toFixed(2);
+            }
+    </script>
+{% endblock %}

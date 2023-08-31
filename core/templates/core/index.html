@@ -1,0 +1,344 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solar Panel Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'font/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+    <!-- header section start-->
+    <div class="section_1">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg p-0">
+                <div class="container-fluid p-0">
+                    <a class="navbar-brand navbar_brand" href="{% url 'index' %}">Tesla Landscaping</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav_ul" style="align-items: center;">
+                            {% block activeclass %}
+                            <li class="nav-item">
+                                <a  class="nav-link nav_link href_active" aria-current="page" href="{% url 'index' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav_link" href="{% url 'gallery' %}">Gallery</a>
+                            </li>
+                            {% endblock %}
+                            <li class="nav-item">
+                                <a class="nav-link p-0" href="{% url 'quote1' %}">
+                                    <button type="button" class="quote_button">Request a Quote</button>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    {% block content %}
+    <!-- Solar Brilliance Section Start-->
+    <div class="section_2">
+        <div class="container">
+            <div style="display: flex;flex-direction: column; align-items: center;">
+                <div class="powering_head">
+                    <h1>Powering Your Home with Solar Brilliance</h1>
+                </div>
+                <div class="powering_p">
+                    <p>Adipiscing elit, sed do eiazusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud. Dicta sunt explicabo.</p>
+                </div>
+            </div>
+            <div class="section_1_image">
+                <img src="{% static 'images/Section → solar-company-image4.jpg.png' %}" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- Solar Brilliance Section end-->
+
+    <!-- Our Installation Services Section Start-->
+    <div class="section_3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="services_title">
+                        <h2>what we offer</h2>
+                        <h3>Our Installation Services</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="services_desc">
+                        <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco.</p>
+                        <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row card_row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="services_card">
+                        <div class="card_title">
+                            <h4>Pavers, <br> Turf</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="services_card walls_card">
+                        <div class="card_title">
+                            <h4>Retaining Walls</h4>
+                            <h4>and Irrigation</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12 drain_colum">
+                    <div class="services_card">
+                        <div class="card_title">
+                            <h4>Outdoor Tiles</h4>
+                            <h4>and French Drain</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12 drain_colum">
+                    <div class="services_card" style="border-right: 0;">
+                        <div class="card_title">
+                            <h4>Pergola,</h4>
+                            <h4>BBQ and Sunroom</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Installation Services Section End-->
+
+    <!-- Save Electricity Section Start-->
+    <div class="section_4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12 col-12">
+                    <div class="d-flex align-items-start">
+                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                            aria-orientation="vertical">
+                            <!-- tab1 -->
+                            <button class="nav-link active navtab_button" id="v-pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                                aria-selected="true">
+                                <h5>Save Electricity</h5>
+                                <p>Adipiscing elait, sed do euismod tempor incidunt ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            </button>
+                            <!-- tab2 -->
+                            <button class="nav-link navtab_button" id="v-pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-profile" type="button" role="tab"
+                                aria-controls="v-pills-profile" aria-selected="false">
+                                <h5>Robust and Long Lasting Design</h5>
+                                <p>Adipiscing elait, sed do euismod tempor incidunt ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            </button>
+                            <!-- tab3 -->
+                            <button class="nav-link navtab_button" id="v-pills-messages-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-messages" type="button" role="tab"
+                                aria-controls="v-pills-messages" aria-selected="false">
+                                <h5>Refined and immaculate appearance.</h5>
+                                <p>Adipiscing elait, sed do euismod tempor incidunt ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            </button>
+                            <!-- tab4 -->
+                            <button class="nav-link navtab_button" id="v-pills-settings-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-settings" type="button" role="tab"
+                                aria-controls="v-pills-settings" aria-selected="false">
+                                <h5>Save Electricity</h5>
+                                <p>Adipiscing elait, sed do euismod tempor incidunt ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab" tabindex="0">
+                            <div class="tab_open_image">
+                                <img src="{% static 'images/1.png' %}" alt="" class="solar_image">
+                                <img src="{% static 'images/2.png' %}" alt="" class="solar_image_man">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab" tabindex="0">
+                            <div class="tab_open_image">
+                                <img src="{% static 'images/1.png' %}" alt="" class="solar_image">
+                                <img src="{% static 'images/2.png' %}" alt="" class="solar_image_man">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel"
+                            aria-labelledby="v-pills-disabled-tab" tabindex="0">
+                            <div class="tab_open_image">
+                                <img src="{% static 'images/1.png' %}" alt="" class="solar_image">
+                                <img src="{% static 'images/2.png' %}" alt="" class="solar_image_man">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                            aria-labelledby="v-pills-messages-tab" tabindex="0">
+                            <div class="tab_open_image">
+                                <img src="{% static 'images/1.png' %}" alt="" class="solar_image">
+                                <img src="{% static 'images/2.png' %}" alt="" class="solar_image_man">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                            aria-labelledby="v-pills-settings-tab" tabindex="0">
+                            <div class="tab_open_image">
+                                <img src="{% static 'images/1.png'%}" alt="" class="solar_image">
+                                <img src="{% static 'images/2.png' %}" alt="" class="solar_image_man">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Save Electricity Section End-->
+
+    <!-- Maximum Durability Section Start-->
+    <div class="section_5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 maximum_durab_colum">
+                    <div class="maximum_durab">
+                        <div class="less_impact2">
+                            <h5>Maximum Durability</h5>
+                            <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <img src="{% static 'images/3.png' %}" alt="" class="maximum_durab_image">
+                </div>
+            </div>
+            <div class="row less_impact_row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <img src="{% static 'images/4.png' %}" alt="" class="maximum_durab_image">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 less_impact1">
+                    <div class="maximum_durab">
+                        <div class="less_impact2">
+                            <h5>Less Impact</h5>
+                            <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row leaks_row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 maximum_durab_colum">
+                    <div class="maximum_durab">
+                        <div class="less_impact2">
+                            <h5>No Leaks</h5>
+                            <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                            <p>Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <img src="{% static 'images/3.png' %}" alt="" class="maximum_durab_image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Maximum Durability Section End-->
+
+    <!-- Video Section Start-->
+    <div class="section_6">
+        <img src="{% static 'images/Section.png' %}" alt="" class="section_image">
+        <button type="button" class="play_button">PLAY</button>
+    </div>
+    <!-- contact our experts start  -->
+    <div class="section_7">
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="contact_our_sec">
+                <h6>contact our experts</h6>
+                <h1>Get Your Instant Free Quote Now</h1>
+                <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco .</p>
+                <div class="text-center">
+                    <a href="{% url 'quote1' %}">
+                        <button type="button" class="request_quote_button">Request Quote</button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- contact our experts end -->
+    {% endblock %}
+     <!-- footer section start-->
+    <footer>
+        <div class="section_8">
+            <div class="container">
+                <div class="footer_top_item">
+                    <div class="footer_top_item_1">
+                        <div class="footer_header">
+                           <a href="{% url 'index' %}">
+                            <h6>Tesla Landscaping</h6>
+                           </a>
+                        </div>
+                        <div class="footer_item">
+                            <a href="{% url 'index' %}">Home</a>
+                            <a href="{% url 'about' %}">About</a>
+                            <a href="{% url 'gallery' %}">Gallery</a>
+                            <a href="{% url 'quote1' %}">Quote</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom_item">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-7 ">
+                            <p>Country— 123 street ,28499 City, 47589</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5">
+                            <a href="#" style="text-decoration: none;">
+                                <p>henrylanchestercan@gmail.com</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 dial_number_colum">
+                            <a href="#" class="dial_number">+1 510-557-2996 </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+      <!-- footer section end-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+</html>
