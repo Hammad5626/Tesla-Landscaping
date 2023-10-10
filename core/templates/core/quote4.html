@@ -28,7 +28,6 @@
                     <h4>Solar Size</h4>
                     <h5>System sizing is an estimation based on your house size</h5>
                     <div class="solar_price">
-                        <h6>6.885 KW Solar</h6>
                         <h6>$16,552</h6>
                     </div>
                 </div>
@@ -44,12 +43,12 @@
     <script>
         var totalDistance = parseFloat('{{ request.GET.total_distance }}');
         var selectedValue = parseFloat('{{ request.GET.selected_value }}');
-
+        var area = (totalDistance / 4 ) * ( totalDistance / 4)
         var result = totalDistance * selectedValue;
         
         var houseSizeElement = document.querySelector('.house_size');
         if (houseSizeElement) {
-            houseSizeElement.textContent = 'Size of your house is ' + totalDistance.toFixed(2) + ' ft';
+            houseSizeElement.textContent = 'Size of your house is ' + area.toFixed(2) + ' ft';
         }
 
         var priceElement = document.querySelector('.solar_price h6:last-child');
