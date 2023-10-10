@@ -1,19 +1,8 @@
-{% extends 'core/index.html' %}
-
-{% block activeclass %}
-    <li class="nav-item">
-        <a  class="nav-link nav_link" aria-current="page" href="{% url 'index' %}">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'gallery' %}">Gallery</a>
-    </li>
-{% endblock %}
+{% extends 'core/base.html' %}
+{% load static %}
+{% block script %}<script src="{% static 'js/quote5.js' %}"></script>{% endblock %}
 
 {% block content %}
-    <!--Order Summary Section 1 Start  -->
     <div class="quote2_section_1 quote5_section_1">
         <div class="container">
             <div class="house_detail_sec your_home">
@@ -21,7 +10,6 @@
                 <div class="solar_size_section">
                     <h4>Order Summary</h4>
                     <div class="order_summary">
-                        <h6>$16,552</h6>
                     </div>
                     <div class="order_summary order_summary_cash">
                         <p>Cash Price</p>

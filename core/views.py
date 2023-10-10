@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import SolarOption
 
 def index(request):
     return render(request, "core/index.html")
@@ -10,7 +11,8 @@ def quote2(request):
     return render(request, "core/quote2.html")
 
 def quote3(request):
-    return render(request, "core/quote3.html")
+    solar_options = SolarOption.objects.all()
+    return render(request, 'core/quote3.html', {'solar_options': solar_options})
 
 def quote4(request):
     return render(request, "core/quote4.html")

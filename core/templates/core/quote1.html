@@ -1,20 +1,11 @@
-{% extends 'core/index.html' %}
-
-{% block activeclass %}
-    <li class="nav-item">
-        <a  class="nav-link nav_link" aria-current="page" href="{% url 'index' %}">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'gallery' %}">Gallery</a>
-    </li>
+{% extends 'core/base.html' %}
+{% load static %}
+{% block head %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmjBa0bBtZgyrt_kaNV_I9anxcPYYQY1s&libraries=places&callback=initializeAutocomplete" async defer></script>
 {% endblock %}
+{% block script %}<script src="{% static 'js/quote1.js' %}"></script>{% endblock %}
 
 {% block content %}
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmjBa0bBtZgyrt_kaNV_I9anxcPYYQY1s&libraries=places&callback=initializeAutocomplete" async defer></script>
-    <!-- Quote Section 1 Start  -->
     <div class="quote_section_1">
         <div class="house_detail_sec">
             <h2>House Details</h2>
@@ -29,24 +20,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function initializeAutocomplete() {
-            let input = document.getElementById('addressInput');
-            let autocomplete = new google.maps.places.Autocomplete(input);
-    
-            autocomplete.addListener('place_changed', function() {
-                let place = autocomplete.getPlace();
-                if (!place.geometry) {
-                    console.log("No location details available for this place.");
-                    return;
-                }
-                
-                let lat = place.geometry.location.lat();
-                let lng = place.geometry.location.lng();
-                window.location.href = "{% url 'quote2' %}?lat=" + lat + "&lng=" + lng;
-            });
-        }
-        document.addEventListener('DOMContentLoaded', initializeAutocomplete);
-    </script>
 {% endblock %}

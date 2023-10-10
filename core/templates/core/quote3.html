@@ -1,84 +1,28 @@
-{% extends 'core/index.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
-
-{% block styles %}
-    <style>
-        .selected {
-            border: 2px solid black;
-        }
-    </style>
-{% endblock %}
-
-{% block activeclass %}
-    <li class="nav-item">
-        <a  class="nav-link nav_link" aria-current="page" href="{% url 'index' %}">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'gallery' %}">Gallery</a>
-    </li>
-{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{% static 'css/quote3.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'js/quote3.js' %}"></script>{% endblock %}
 
 {% block content %}
-    <!--Choose Material Section 1 Start  -->
     <div class="quote2_section_1 quote3_section_1">
         <div class="container">
             <div class="house_detail_sec">
                 <h2>Choose Material</h2>
                 <div class="card_section">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
-                            <div class="choose_material_card" data-value="19.50">
-                                <img src="{% static 'images/3.png' %}" class="card_img" alt="...">
-                                <div class="card_body">
-                                    <h5>Solar Panels</h5>
-                                    <h6>paver/catalina</h6>
-                                    <p>Retrofil Panels for your existing roof</p>
+                        {% for option in solar_options %}
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
+                                <div class="choose_material_card" data-value="{{ option.value }}">
+                                    {% for image in option.optionimage_set.all %}
+                                    <img src="{{ MEDIA_URL }}{{ image.image_file.url }}" class="card_img" alt="{{ image.image_file.name }}">
+                                    {% endfor %}
+                                    <div class="card_body">
+                                        <h5>{{ option.title }}</h5>
+                                        <p>{{ option.description }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
-                            <div class="choose_material_card" data-value="32.00">
-                                <img src="{% static 'images/3.png' %}" class="card_img" alt="...">
-                                <div class="card_body">
-                                    <h5>Solar Panels</h5>
-                                    <h6>Cinder block wall with rebars+2$/upgrade</h6>
-                                    <p>Retrofil Panels for your existing roof</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
-                            <div class="choose_material_card" data-value="18.00">
-                                <img src="{% static 'images/3.png' %}" class="card_img" alt="...">
-                                <div class="card_body">
-                                    <h5>Solar Panels</h5>
-                                    <h6>French Drain</h6>
-                                    <p>Retrofil Panels for your existing roof</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
-                            <div class="choose_material_card"data-value="13.90">
-                                <img src="{% static 'images/3.png' %}" class="card_img" alt="...">
-                                <div class="card_body">
-                                    <h5>Solar Panels</h5>
-                                    <h6>artifical grass</h6>
-                                    <p>Retrofil Panels for your existing roof</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 col-sm-12 col-12 mt-4">
-                            <div class="choose_material_card" data-value="3.90">
-                                <img src="{% static 'images/3.png' %}" class="card_img" alt="...">
-                                <div class="card_body">
-                                    <h5>Solar Panels</h5>
-                                    <h6>artifical grass waste</h6>
-                                    <p>Retrofil Panels for your existing roof</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="quote1_button_sec">
@@ -89,65 +33,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const materialCards = document.querySelectorAll('.choose_material_card');
-        let coordinatesJSON = decodeURIComponent('{{ request.GET.coordinates|safe }}');
-        let coordinates = JSON.parse(coordinatesJSON);
-        let selectedCard = null;
-        let selectedValue = null;
-        let quote4URL = null;
-        let totalDistance = 0;
-
-        // Haversine Formula
-        function calculateDistance(lat1, lon1, lat2, lon2) {
-            let R = 6371;   // latitude
-            let dLat = deg2rad(lat2 - lat1);
-            let dLon = deg2rad(lon2 - lon1);
-            let a =
-                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-                Math.sin(dLon / 2) * Math.sin(dLon / 2);
-            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            let distance = R * c;
-            return distance;
-        }
-        
-        function deg2rad(deg) {
-            return deg * (Math.PI / 180);
-        }
-
-        // Calculate total length of polyline
-        for (let i = 0; i < coordinates.length - 1; i++) {
-            let lat1 = coordinates[i].lat;
-            let lon1 = coordinates[i].lng;
-            let lat2 = coordinates[i + 1].lat;
-            let lon2 = coordinates[i + 1].lng;
-            totalDistance += calculateDistance(lat1, lon1, lat2, lon2);
-        }
-        totalDistance = totalDistance * 3280.84;
-
-        materialCards.forEach(card => {
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', function() {
-                if (selectedCard) {
-                    selectedCard.classList.remove('selected');
-                }
-                
-                card.classList.add('selected');
-                selectedCard = card;
-                
-                selectedValue = parseFloat(card.getAttribute('data-value'));
-                quote4URL = '{% url "quote4" %}?total_distance=' + totalDistance + '&selected_value=' + selectedValue;
-            });
-        });
-        
-        document.querySelector('.quote1_button').addEventListener('click', function() {
-        if (selectedCard !== null) {
-            window.location.href = quote4URL;
-        } else {
-            alert('Please select a material before getting a quote.');
-        }
-        });
-    </script>
 {% endblock %}

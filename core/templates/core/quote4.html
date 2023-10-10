@@ -1,20 +1,8 @@
-{% extends 'core/index.html' %}
+{% extends 'core/base.html' %}
 {% load static %}
-
-{% block activeclass %}
-    <li class="nav-item">
-        <a  class="nav-link nav_link" aria-current="page" href="{% url 'index' %}">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'about' %}">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link nav_link" href="{% url 'gallery' %}">Gallery</a>
-    </li>
-{% endblock %}
+{% block script %}<script src="{% static 'js/quote4.js' %}"></script>{% endblock %}
 
 {% block content %}
-    <!--Your Home Section 1 Start  -->
     <div class="quote2_section_1 quote3_section_1">
         <div class="container">
             <div class="house_detail_sec your_home">
@@ -25,35 +13,18 @@
                     <img src="{% static 'images/Vector.svg' %}" alt="">
                 </div>
                 <div class="solar_size_section">
-                    <h4>Solar Size</h4>
-                    <h5>System sizing is an estimation based on your house size</h5>
+                    <h4>Total Price</h4>
                     <div class="solar_price">
+                        <h6>Price</h6>
                         <h6>$16,552</h6>
                     </div>
                 </div>
                 <div class="quote1_button_sec">
-                    <a href="{% url 'quote5' %}">
+                    <a href="#">
                         <button type="button" class="quote1_button">Continue to Order</button>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    
-    <script>
-        var totalDistance = parseFloat('{{ request.GET.total_distance }}');
-        var selectedValue = parseFloat('{{ request.GET.selected_value }}');
-        var area = (totalDistance / 4 ) * ( totalDistance / 4)
-        var result = totalDistance * selectedValue;
-        
-        var houseSizeElement = document.querySelector('.house_size');
-        if (houseSizeElement) {
-            houseSizeElement.textContent = 'Size of your house is ' + area.toFixed(2) + ' ft';
-        }
-
-        var priceElement = document.querySelector('.solar_price h6:last-child');
-            if (priceElement) {
-                priceElement.textContent = '$' + result.toFixed(2);
-            }
-    </script>
 {% endblock %}
