@@ -1,7 +1,65 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static 'css/quote3.css' %}">{% endblock %}
-{% block script %}<script src="{% static 'js/quote3.js' %}"></script>{% endblock %}
+{% block script %}
+{% comment %} <script src="{% static 'js/quote3.js' %}"></script> {% endcomment %}
+<script>
+    const materialCards = document.querySelectorAll('.choose_material_card');
+let coordinatesJSON = decodeURIComponent('{{ request.GET.coordinates|safe }}');
+let coordinates = JSON.parse(coordinatesJSON);
+let selectedCard = null;
+let selectedValue = null;
+let quote4URL = null;
+let totalDistance = 0;
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    let R = 6371;
+    let dLat = deg2rad(lat2 - lat1);
+    let dLon = deg2rad(lon2 - lon1);
+    let a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    let distance = R * c;
+    return distance;
+}
+        
+function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+}
+
+for (let i = 0; i < coordinates.length - 1; i++) {
+    let lat1 = coordinates[i].lat;
+    let lon1 = coordinates[i].lng;
+    let lat2 = coordinates[i + 1].lat;
+    let lon2 = coordinates[i + 1].lng;
+    totalDistance += calculateDistance(lat1, lon1, lat2, lon2);
+}
+totalDistance = totalDistance * 3280.84;
+
+materialCards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+        if (selectedCard) {
+            selectedCard.classList.remove('selected');
+        }        
+        card.classList.add('selected');
+        selectedCard = card;
+        selectedValue = parseFloat(card.getAttribute('data-value'));
+        quote4URL = '{% url "quote4" %}?total_distance=' + totalDistance + '&selected_value=' + selectedValue;
+    });
+});
+
+document.querySelector('.quote1_button').addEventListener('click', function() {
+    if (selectedCard !== null) {
+        window.location.href = quote4URL;
+    } else {
+        alert('Please select a material before getting a quote.');
+}
+});
+</script>
+{% endblock %}
 
 {% block content %}
     <div class="quote2_section_1 quote3_section_1">
