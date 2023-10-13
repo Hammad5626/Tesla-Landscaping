@@ -5,7 +5,14 @@
 {% block content %}
     <div class="quote2_section_1 quote3_section_1">
         <div class="container">
-            <div class="house_detail_sec your_home" id="house_detail_sec" data-distance="{{ request.GET.total_distance }}" data-value="{{ request.GET.selected_value }}">
+            <div 
+            class="house_detail_sec your_home" id="house_detail_sec" 
+            data-distance="{{ request.GET.total_distance }}" 
+            data-value="{{ request.GET.selected_value }}" 
+            data-initlat="{{ request.GET.initialLat }}"
+            data-initlng="{{ request.GET.initialLng }}"
+            data-matname="{{ request.GET.selectedTitle }}"
+            >
                 <h2>Your Home</h2>
                 <h3>Your Address, street no, house no</h3>
                 <p class="house_size">Size of your house is 123940 ft</p>
@@ -15,9 +22,9 @@
                 <div class="solar_size_section">
                     <h4>System Sizing</h4>
                     <p>Estimated pricing for your project.</p>
-                    <div class="solar_price" style="margin-bottom: 10px;">
+                    <div class="solar_price material_element" style="margin-bottom: 10px;">
                         <h6>Material</h6>
-                        <h6 class="material_size">Sample</h6>
+                        <h6>Sample</h6>
                     </div>
                     <div class="solar_price price_element">
                         <h6>Price</h6>

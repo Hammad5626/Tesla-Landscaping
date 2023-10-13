@@ -26,7 +26,7 @@ function initMap() {
         path.forEach(function(latlng) {
             pathCoordinates.push({ lat: latlng.lat(), lng: latlng.lng() });
         });
-
+        
         let coordinatesJSON = JSON.stringify(pathCoordinates);
         let coordinate = encodeURIComponent(coordinatesJSON);
         let url = input.getAttribute("data-url");

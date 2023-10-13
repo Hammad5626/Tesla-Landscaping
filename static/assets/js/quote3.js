@@ -4,9 +4,12 @@ let input = document.querySelector('.quote1_button');
 let coordinates = JSON.parse(coordinatesJSON);
 let selectedCard = null;
 let selectedValue = null;
+let selectedTitle = null;
 let quote4URL = null;
 let totalDistance = 0;
-console.log(coordinatesJSON);
+let firstLat = coordinates[0].lat;
+let firstLng = coordinates[0].lng;
+
 function calculateDistance(lat1, lon1, lat2, lon2) {
     let R = 6371;
     let dLat = deg2rad(lat2 - lat1);
@@ -42,8 +45,9 @@ materialCards.forEach(card => {
         card.classList.add('selected');
         selectedCard = card;
         selectedValue = parseFloat(card.getAttribute('data-value'));
+        selectedTitle = card.getAttribute('data-name');
         let url = input.getAttribute("data-url");
-        quote4URL = `${url}?total_distance=${totalDistance}&selected_value=${selectedValue}`;
+        quote4URL = `${url}?total_distance=${totalDistance}&selected_value=${selectedValue}&initialLat=${firstLat}&initialLng=${firstLng}&selectedTitle=${selectedTitle}`;
     });
 });
 
