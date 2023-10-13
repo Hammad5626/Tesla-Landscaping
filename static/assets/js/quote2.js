@@ -1,7 +1,7 @@
 function initMap() {
-    let lat = parseFloat('{{ request.GET.lat }}');
-    let lng = parseFloat('{{ request.GET.lng }}');
-    
+    let lat = parseFloat(mapContainer.getAttribute('data-lat'));
+    let lng = parseFloat(mapContainer.getAttribute('data-lng'));
+    let input = document.querySelector('.quote1_button');
     let location = { lat: lat, lng: lng };
     let pathCoordinates = [];
     
@@ -28,8 +28,9 @@ function initMap() {
         });
 
         let coordinatesJSON = JSON.stringify(pathCoordinates);
-
-        window.location.href = '{% url "quote3" %}?coordinates=' + encodeURIComponent(coordinatesJSON);
+        let coordinate = encodeURIComponent(coordinatesJSON);
+        let url = input.getAttribute("data-url");
+        window.location.href = `${url}?coordinates=${coordinate}`;
     });
 }
 document.addEventListener('DOMContentLoaded', initMap);

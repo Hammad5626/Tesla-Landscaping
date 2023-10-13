@@ -8,14 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("No location details available for this place.");
             return;
         }
-
         let lat = place.geometry.location.lat();
         let lng = place.geometry.location.lng();
-        
         let url = input.getAttribute('data-url');
-        
         let newUrl = `${url}?lat=${lat}&lng=${lng}`;
-        
         window.location.href = newUrl;
     });
 });

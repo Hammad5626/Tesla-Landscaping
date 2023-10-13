@@ -5,7 +5,7 @@
 {% block content %}
     <div class="quote2_section_1 quote3_section_1">
         <div class="container">
-            <div class="house_detail_sec your_home">
+            <div class="house_detail_sec your_home" id="house_detail_sec" data-distance="{{ request.GET.total_distance }}" data-value="{{ request.GET.selected_value }}">
                 <h2>Your Home</h2>
                 <h3>Your Address, street no, house no</h3>
                 <p class="house_size">Size of your house is 123940 ft</p>
@@ -13,15 +13,20 @@
                     <img src="{% static 'images/Vector.svg' %}" alt="">
                 </div>
                 <div class="solar_size_section">
-                    <h4>Total Price</h4>
-                    <div class="solar_price">
+                    <h4>System Sizing</h4>
+                    <p>Estimated pricing for your project.</p>
+                    <div class="solar_price" style="margin-bottom: 10px;">
+                        <h6>Material</h6>
+                        <h6 class="material_size">Sample</h6>
+                    </div>
+                    <div class="solar_price price_element">
                         <h6>Price</h6>
                         <h6>$16,552</h6>
                     </div>
                 </div>
                 <div class="quote1_button_sec">
                     <a href="#">
-                        <button type="button" class="quote1_button">Continue to Order</button>
+                        <button type="button" data-url="{% url 'quote5' %}" class="quote1_button">Continue to Submissions</button>
                     </a>
                 </div>
             </div>

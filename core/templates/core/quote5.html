@@ -7,8 +7,8 @@
         <div class="container">
             <div class="house_detail_sec your_home">
                 <h2></h2>
-                <div class="solar_size_section">
-                    <h4>Order Summary</h4>
+                <div class="solar_size_section" id="solar_size_section" data-price="{{ request.GET.price }}">
+                    <h4>Submission Summary</h4>
                     <div class="order_summary">
                     </div>
                     <div class="order_summary order_summary_cash">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="quote1_button_sec">
                     <a href="#">
-                        <button type="button" class="quote1_button">Order with Card</button>
+                        <button type="button" class="quote1_button">Submit</button>
                     </a>
                 </div>
             </div>
