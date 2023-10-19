@@ -9,7 +9,7 @@
             <div class="house_detail_sec">
                 <h2>Choose Material</h2>
                 <div class="card_section">
-                    <div class="row" id="data_fetch" data-component="{{ request.GET.coordinates }}">
+                    <div class="row" id="data_fetch" data-component="{{ coordinates }}">
                         {% for option in solar_options %}
                             <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-4">
                                 <div class="choose_material_card" data-value="{{ option.value }}" data-name="{{ option.title }}">
@@ -26,9 +26,15 @@
                     </div>
                 </div>
                 <div class="quote1_button_sec">
-                    <a href="#">
-                        <button type="button" data-url="{% url 'quote4' %}" class="quote1_button">Get Quote</button>
-                    </a>
+                    <form method="post" action="{% url 'quote4' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="total_distance" id="totalDistanceInput">
+                        <input type="hidden" name="selected_value" id="selectedValueInput">
+                        <input type="hidden" name="initialLat" id="initialLatInput">
+                        <input type="hidden" name="initialLng" id="initialLngInput">
+                        <input type="hidden" name="selectedTitle" id="selectedTitleInput">
+                        <button type="submit" class="quote1_button">Get Quote</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -7,9 +7,13 @@
         <div class="container">
             <div class="house_detail_sec your_home">
                 <h2></h2>
-                <div class="solar_size_section" id="solar_size_section" data-price="{{ request.GET.price }}">
+                <div class="solar_size_section" id="solar_size_section" data-price="{{ price }}" data-area="{{ area }}">
                     <h4>Submission Summary</h4>
                     <div class="order_summary">
+                    </div>
+                    <div class="order_summary material_summary">
+                        <p>{{ selectedMaterial }}</p>
+                        <h6>{{ area }} sq ft</h6>
                     </div>
                     <div class="order_summary order_summary_cash">
                         <p>Cash Price</p>
@@ -17,9 +21,15 @@
                     </div>
                 </div>
                 <div class="quote1_button_sec">
-                    <a href="#">
-                        <button type="button" class="quote1_button">Submit</button>
-                    </a>
+                    <form method="post" action="{% url 'quote6' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="initialLat" value="{{ initialLat }}">
+                        <input type="hidden" name="initialLng" value="{{ initialLng }}">
+                        <input type="hidden" name="selectedMaterial" value="{{ selectedMaterial }}">
+                        <input type="hidden" name="price" value="{{ price }}">
+                        <input type="hidden" name="area" value="{{ area }}">
+                        <button type="submit" class="quote1_button">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

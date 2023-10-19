@@ -12,12 +12,14 @@
             <div class="house_detail_sec">
                 <h2>Mark Your House</h2>
                 <div>
-                    <div id="mapContainer" class="mark_house_map" data-lat="{{ request.GET.lat }}" data-lng="{{ request.GET.lng }}"></div>
+                    <div id="mapContainer" class="mark_house_map" data-lat="{{ lat }}" data-lng="{{ lng }}"></div>
                 </div>
                 <div class="quote1_button_sec">
-                    <a href="{% url 'quote3' %}">
-                        <button type="button" data-url="{% url 'quote3' %}" class="quote1_button">Next</button>
-                    </a>
+                    <form method="post" action="{% url 'quote3' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="coordinates" id="coordinatesInput" value="{{ coordinates }}">
+                        <button type="submit" class="quote1_button">Next</button>
+                    </form>
                 </div>
             </div>
         </div>

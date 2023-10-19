@@ -1,4 +1,4 @@
-import os
+import os, uuid
 from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
@@ -36,3 +36,15 @@ def delete_old_image(sender, instance, **kwargs):
                 os.remove(old_instance.image_file.path)
 
 pre_save.connect(delete_old_image, sender=OptionImage)
+
+class Quote(models.Model):
+    unique_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    username = models.CharField(max_length=100)
+    initialLat = models.FloatField()
+    initialLng = models.FloatField()
+    selectedMaterial = models.CharField(max_length=100)
+    price = models.FloatField()
+    area = models.FloatField()
+
+    def __str__(self):
+            return f"{self.username} - {self.selectedMaterial}"

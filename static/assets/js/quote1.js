@@ -1,5 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
+function initMap () {
     let input = document.getElementById('addressInput');
+    let latInput = document.getElementById('latInput');
+    let lngInput = document.getElementById('lngInput');
     let autocomplete = new google.maps.places.Autocomplete(input);
 
     autocomplete.addListener('place_changed', function () {
@@ -10,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         let lat = place.geometry.location.lat();
         let lng = place.geometry.location.lng();
-        let url = input.getAttribute('data-url');
-        let newUrl = `${url}?lat=${lat}&lng=${lng}`;
-        window.location.href = newUrl;
+        latInput.value = lat;
+        lngInput.value = lng;
     });
-});
+};
+document.addEventListener('DOMContentLoaded', initMap);

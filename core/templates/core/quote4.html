@@ -7,20 +7,20 @@
         <div class="container">
             <div 
             class="house_detail_sec your_home" id="house_detail_sec" 
-            data-distance="{{ request.GET.total_distance }}" 
-            data-value="{{ request.GET.selected_value }}" 
-            data-initlat="{{ request.GET.initialLat }}"
-            data-initlng="{{ request.GET.initialLng }}"
-            data-matname="{{ request.GET.selectedTitle }}"
+            data-distance="{{ total_distance }}" 
+            data-value="{{ selected_value }}" 
+            data-initlat="{{ initialLat }}"
+            data-initlng="{{ initialLng }}"
+            data-matname="{{ selectedTitle }}"
             >
-                <h2>Your Home</h2>
+                <h2>Confirmation</h2>
                 <h3>Your Address, street no, house no</h3>
-                <p class="house_size">Size of your house is 123940 ft</p>
+                <p class="house_size">Project Size 123940 ft</p>
                 <div class="vector_image">
                     <img src="{% static 'images/Vector.svg' %}" alt="">
                 </div>
                 <div class="solar_size_section">
-                    <h4>System Sizing</h4>
+                    <h4>Project Estimate</h4>
                     <p>Estimated pricing for your project.</p>
                     <div class="solar_price material_element" style="margin-bottom: 10px;">
                         <h6>Material</h6>
@@ -32,9 +32,15 @@
                     </div>
                 </div>
                 <div class="quote1_button_sec">
-                    <a href="#">
-                        <button type="button" data-url="{% url 'quote5' %}" class="quote1_button">Continue to Submissions</button>
-                    </a>
+                    <form method="post" action="{% url 'quote5' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="initialLat">
+                        <input type="hidden" name="initialLng">
+                        <input type="hidden" name="selectedMaterial">
+                        <input type="hidden" name="price">
+                        <input type="hidden" name="area">
+                        <button type="sumbit" class="quote1_button">Continue</button>
+                    </form>
                 </div>
             </div>
         </div>

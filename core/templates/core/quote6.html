@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block script %}<script src="{% static 'js/quote6.js' %}"></script>{% endblock %}
+
+{% block content %}
+    <div class="quote2_section_1 quote5_section_1">
+        <div class="container">
+            <div class="house_detail_sec your_home">
+                <h2></h2>
+                <div class="solar_size_section" id="solar_size_section" >
+                    <h4>Your Estimations have been submitted and will be reviewed</h4>
+                    <div class="order_summary">
+                    </div>
+                    <div class="order_summary">
+                        <h6>Order ID:</h6>
+                        <h6>{{ unique_id }}</h6>
+                    </div>
+                </div>
+                <div class="quote1_button_sec">
+                    <a href="{% url 'index' %}">
+                        <button type="button" class="quote1_button">Back to Home</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

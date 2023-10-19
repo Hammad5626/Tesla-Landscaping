@@ -1,11 +1,9 @@
 const materialCards = document.querySelectorAll('.choose_material_card');
 let coordinatesJSON = decodeURIComponent(data_fetch.getAttribute('data-component'));
-let input = document.querySelector('.quote1_button');
 let coordinates = JSON.parse(coordinatesJSON);
 let selectedCard = null;
 let selectedValue = null;
 let selectedTitle = null;
-let quote4URL = null;
 let totalDistance = 0;
 let firstLat = coordinates[0].lat;
 let firstLng = coordinates[0].lng;
@@ -46,14 +44,17 @@ materialCards.forEach(card => {
         selectedCard = card;
         selectedValue = parseFloat(card.getAttribute('data-value'));
         selectedTitle = card.getAttribute('data-name');
-        let url = input.getAttribute("data-url");
-        quote4URL = `${url}?total_distance=${totalDistance}&selected_value=${selectedValue}&initialLat=${firstLat}&initialLng=${firstLng}&selectedTitle=${selectedTitle}`;
     });
 });
 
 document.querySelector('.quote1_button').addEventListener('click', function() {
     if (selectedCard !== null) {
-        window.location.href = quote4URL;
+        document.getElementById('totalDistanceInput').value = totalDistance;
+        document.getElementById('selectedValueInput').value = selectedValue;
+        document.getElementById('initialLatInput').value = firstLat;
+        document.getElementById('initialLngInput').value = firstLng;
+        document.getElementById('selectedTitleInput').value = selectedTitle;
+        document.querySelector('form').submit();
     } else {
         alert('Please select a material before getting a quote.');
 }

@@ -10,13 +10,16 @@
         <div class="house_detail_sec">
             <h2>House Details</h2>
             <div style="position: relative;">
-                <input type="text" name="" id="addressInput" class="address_input" placeholder="Enter Your Address" data-url="{% url 'quote2' %}">
+                <input type="text" name="" id="addressInput" class="address_input" placeholder="Enter Your Address">
                 <i class='bx bx-search search_icon'></i>
             </div>
             <div class="quote1_button_sec">
-                <a href="{% url 'quote2' %}">
-                    <button type="button" class="quote1_button">Next</button>
-                </a>
+                <form method='post' action="{% url 'quote2' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="lat" id="latInput">
+                    <input type="hidden" name="lng" id="lngInput">
+                    <button type="submit" class="quote1_button">Next</button>
+                </form>
             </div>
         </div>
     </div>
