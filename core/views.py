@@ -22,9 +22,12 @@ def quote2(request):
 def quote3(request):
     if request.method == 'POST':
         coordinates = request.POST.get('coordinates')
+        map_image = request.POST.get('map_image')
+        print(map_image)
         solar_options = SolarOption.objects.all()
         context = {
             'coordinates': coordinates,
+            'map_image': map_image,
             'solar_options': solar_options
             }
         return render(request, 'core/quote3.html', context)
@@ -38,6 +41,7 @@ def quote4(request):
         initialLat = request.POST.get('initialLat')
         initialLng = request.POST.get('initialLng')
         selectedTitle = request.POST.get('selectedTitle')
+        map_image = request.POST.get('map_image')
 
         context = {
             'total_distance': total_distance,
@@ -45,6 +49,7 @@ def quote4(request):
             'initialLat': initialLat,
             'initialLng': initialLng,
             'selectedTitle': selectedTitle,
+            'map_image': map_image,
         }
         return render(request, "core/quote4.html", context)
     return render(request, "core/quote4.html")

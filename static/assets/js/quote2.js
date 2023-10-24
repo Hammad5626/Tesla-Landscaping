@@ -27,7 +27,14 @@ function initMap() {
             pathCoordinates.push({ lat: latlng.lat(), lng: latlng.lng() });
         });
         document.getElementById('coordinatesInput').value = JSON.stringify(pathCoordinates);
-        console.log(document.getElementById('coordinatesInput').value);
+
+        const bounds = new google.maps.LatLngBounds();
+        path.forEach(function (latlng) {
+            bounds.extend(latlng);
+        });
+        const center = bounds.getCenter();
+        const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=640x480&path=color:0xff0000ff|weight:5|enc:${google.maps.geometry.encoding.encodePath(path)}&center=${center.lat()},${center.lng()}&zoom=19&maptype=satellite&key=AIzaSyBmjBa0bBtZgyrt_kaNV_I9anxcPYYQY1s`;
+        document.getElementById('map_imageInput').value = staticMapUrl;
     });
 }
 document.addEventListener('DOMContentLoaded', initMap);
