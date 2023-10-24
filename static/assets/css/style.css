@@ -803,8 +803,8 @@
 }
 
 .vector_image img {
-    width: 116px;
-    height: 100px;
+    width: 640px;
+    height: 480px;
 }
 
 .solar_size_section {
@@ -1005,8 +1005,8 @@
     }
 
     .vector_image img {
-        width: 110px;
-        height: 94px;
+        width: 640px;
+        height: 480px;
     }
 
     .solar_size_section h4 {
@@ -1262,8 +1262,8 @@
     }
 
     .vector_image img {
-        width: 105px;
-        height: 90px;
+        width: 320px;
+        height: 240px;
     }
 
     .solar_size_section {
@@ -1829,8 +1829,8 @@
     }
 
     .vector_image img {
-        width: 95px;
-        height: 85px;
+        width: 256px;
+        height: 144px;
     }
 
     .solar_size_section h4 {
@@ -2190,8 +2190,8 @@
     }
 
     .vector_image img {
-        width: 90px;
-        height: 80px;
+        width: 256px;
+        height: 144px;
     }
 
     .mark_house_image {
