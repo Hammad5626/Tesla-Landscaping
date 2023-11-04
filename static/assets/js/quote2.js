@@ -20,6 +20,30 @@ function initMap() {
         }
     });
     drawingManager.setMap(map);
+
+    let marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'Your Marker Title'
+    });
+
+    let geocoder = new google.maps.Geocoder();
+geocoder.geocode({ location: location }, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+            // Set the content of the info window to the place name
+            let placeName = results[0].formatted_address;
+            let infoWindow = new google.maps.InfoWindow({
+                content: placeName
+            });
+
+            // Add a click event listener to show the info window when the marker is clicked
+            marker.addListener('click', function() {
+                infoWindow.open(map, marker);
+            });
+        }
+    }
+});
     
     google.maps.event.addListener(drawingManager, 'polylinecomplete', function(polyline) {
         let path = polyline.getPath();
