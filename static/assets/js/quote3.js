@@ -14,10 +14,11 @@ geocoder.geocode({ location: house_location }, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
         if (results[0]) {
             placeName = results[0].formatted_address;
+            console.log("Inside Place Name:------->>>");
+            console.log(placeName);
         }
     }
 });
-
 materialCards.forEach(card => {
     card.style.cursor = 'pointer';
     card.addEventListener('click', function() {
