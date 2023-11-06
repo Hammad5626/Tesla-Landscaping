@@ -14,6 +14,7 @@
             data-matname="{{ selectedTitle }}"
             >
                 <h2>Confirmation</h2>
+                <h3>{{ address }}</h3>
                 <p class="house_size">Project Size 123940 ft</p>
                 <div class="vector_image">
                     <img src="{{ map_image }}" alt="House Image Drawn">
@@ -37,7 +38,8 @@
                         <input type="hidden" name="initialLng">
                         <input type="hidden" name="selectedMaterial">
                         <input type="hidden" name="price">
-                        <input type="hidden" name="area">
+                        <input type="hidden" name="area" value="{{ total_distance }}">
+                        <input type="hidden" name="address" value="{{ address }}">
                         <button type="sumbit" class="quote1_button">Continue</button>
                     </form>
                 </div>

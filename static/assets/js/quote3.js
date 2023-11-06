@@ -4,35 +4,19 @@ let coordinates = JSON.parse(coordinatesJSON);
 let selectedCard = null;
 let selectedValue = null;
 let selectedTitle = null;
-let totalDistance = 0;
 let firstLat = coordinates[0].lat;
 let firstLng = coordinates[0].lng;
+let house_location = { lat: firstLat, lng: firstLng };
+let placeName = null;
 
-function calculateDistance(lat1, lon1, lat2, lon2) {
-    let R = 6371;
-    let dLat = deg2rad(lat2 - lat1);
-    let dLon = deg2rad(lon2 - lon1);
-    let a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    let distance = R * c;
-    return distance;
-}
-        
-function deg2rad(deg) {
-    return deg * (Math.PI / 180);
-}
-
-for (let i = 0; i < coordinates.length - 1; i++) {
-    let lat1 = coordinates[i].lat;
-    let lon1 = coordinates[i].lng;
-    let lat2 = coordinates[i + 1].lat;
-    let lon2 = coordinates[i + 1].lng;
-    totalDistance += calculateDistance(lat1, lon1, lat2, lon2);
-}
-totalDistance = totalDistance * 3280.84;
+let geocoder = new google.maps.Geocoder();
+geocoder.geocode({ location: house_location }, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+            placeName = results[0].formatted_address;
+        }
+    }
+});
 
 materialCards.forEach(card => {
     card.style.cursor = 'pointer';
@@ -49,11 +33,11 @@ materialCards.forEach(card => {
 
 document.querySelector('.quote1_button').addEventListener('click', function() {
     if (selectedCard !== null) {
-        document.getElementById('totalDistanceInput').value = totalDistance;
         document.getElementById('selectedValueInput').value = selectedValue;
         document.getElementById('initialLatInput').value = firstLat;
         document.getElementById('initialLngInput').value = firstLng;
         document.getElementById('selectedTitleInput').value = selectedTitle;
+        document.getElementById('addressInput').value = placeName;
         document.querySelector('form').submit();
     } else {
         alert('Please select a material before getting a quote.');

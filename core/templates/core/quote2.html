@@ -18,6 +18,7 @@
                     <form method="post" action="{% url 'quote3' %}">
                         {% csrf_token %}
                         <input type="hidden" name="coordinates" id="coordinatesInput" value="{{ coordinates }}">
+                        <input type="hidden" name="area" id="areaInput">
                         <input type="hidden" name="map_image" id="map_imageInput">
                         <button type="submit" class="quote1_button">Next</button>
                     </form>

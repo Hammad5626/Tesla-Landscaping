@@ -1,6 +1,9 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block styles %}<link rel="stylesheet" href="{% static 'css/quote3.css' %}">{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/quote3.css' %}">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmjBa0bBtZgyrt_kaNV_I9anxcPYYQY1s&libraries=drawing"></script>
+{% endblock %}
 {% block script %}<script src="{% static 'js/quote3.js' %}"></script>{% endblock %}
 
 {% block content %}
@@ -29,7 +32,8 @@
                 <div class="quote1_button_sec">
                     <form method="post" action="{% url 'quote4' %}">
                         {% csrf_token %}
-                        <input type="hidden" name="total_distance" id="totalDistanceInput">
+                        <input type="hidden" name="total_distance" id="totalDistanceInput" value="{{ area }}">
+                        <input type="hidden" name="address" id="addressInput">
                         <input type="hidden" name="selected_value" id="selectedValueInput">
                         <input type="hidden" name="initialLat" id="initialLatInput">
                         <input type="hidden" name="initialLng" id="initialLngInput">

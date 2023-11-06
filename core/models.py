@@ -45,6 +45,8 @@ class Quote(models.Model):
     selectedMaterial = models.CharField(max_length=100)
     price = models.FloatField()
     area = models.FloatField()
+    address = models.CharField(max_length=512)
+    
 
     def __str__(self):
             return f"{self.username} - {self.selectedMaterial}"

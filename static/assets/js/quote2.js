@@ -3,6 +3,7 @@ function initMap() {
     let lng = parseFloat(mapContainer.getAttribute('data-lng'));
     let location = { lat: lat, lng: lng };
     let pathCoordinates = [];
+    let placeName = null;
     
     let map = new google.maps.Map(document.getElementById('mapContainer'), {
         center: location,
@@ -28,25 +29,24 @@ function initMap() {
     });
 
     let geocoder = new google.maps.Geocoder();
-geocoder.geocode({ location: location }, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-        if (results[0]) {
-            // Set the content of the info window to the place name
-            let placeName = results[0].formatted_address;
-            let infoWindow = new google.maps.InfoWindow({
-                content: placeName
-            });
+    geocoder.geocode({ location: location }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+                placeName = results[0].formatted_address;
+                let infoWindow = new google.maps.InfoWindow({
+                    content: placeName
+                });
 
-            // Add a click event listener to show the info window when the marker is clicked
-            marker.addListener('click', function() {
-                infoWindow.open(map, marker);
-            });
+                marker.addListener('click', function() {
+                    infoWindow.open(map, marker);
+                });
+            }
         }
-    }
-});
+    });
     
     google.maps.event.addListener(drawingManager, 'polylinecomplete', function(polyline) {
         let path = polyline.getPath();
+        var area = google.maps.geometry.spherical.computeArea(polyline.getPath());
         path.forEach(function(latlng) {
             pathCoordinates.push({ lat: latlng.lat(), lng: latlng.lng() });
         });
@@ -59,6 +59,7 @@ geocoder.geocode({ location: location }, function(results, status) {
         const center = bounds.getCenter();
         const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=640x480&path=color:0xff0000ff|weight:5|enc:${google.maps.geometry.encoding.encodePath(path)}&center=${center.lat()},${center.lng()}&zoom=19&maptype=satellite&key=AIzaSyBmjBa0bBtZgyrt_kaNV_I9anxcPYYQY1s`;
         document.getElementById('map_imageInput').value = staticMapUrl;
+        document.getElementById('areaInput').value = area;
     });
 }
 document.addEventListener('DOMContentLoaded', initMap);

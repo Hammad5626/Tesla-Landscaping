@@ -22,13 +22,16 @@ def quote2(request):
 def quote3(request):
     if request.method == 'POST':
         coordinates = request.POST.get('coordinates')
+        area = request.POST.get('area')
         map_image = request.POST.get('map_image')
+
         print(map_image)
         solar_options = SolarOption.objects.all()
         context = {
             'coordinates': coordinates,
             'map_image': map_image,
-            'solar_options': solar_options
+            'solar_options': solar_options,
+            'area': area,
             }
         return render(request, 'core/quote3.html', context)
     solar_options = SolarOption.objects.all()
@@ -37,6 +40,7 @@ def quote3(request):
 def quote4(request):
     if request.method == 'POST':
         total_distance = request.POST.get('total_distance')
+        address = request.POST.get('address')
         selected_value = request.POST.get('selected_value')
         initialLat = request.POST.get('initialLat')
         initialLng = request.POST.get('initialLng')
@@ -50,6 +54,7 @@ def quote4(request):
             'initialLng': initialLng,
             'selectedTitle': selectedTitle,
             'map_image': map_image,
+            'address': address,
         }
         return render(request, "core/quote4.html", context)
     return render(request, "core/quote4.html")
@@ -61,6 +66,7 @@ def quote5(request):
         selectedMaterial = request.POST.get('selectedMaterial')
         price = request.POST.get('price')
         area = request.POST.get('area')
+        address = request.POST.get('address')
         
         context = {
             'initialLat': initialLat,
@@ -68,6 +74,7 @@ def quote5(request):
             'selectedMaterial': selectedMaterial,
             'price': price,
             'area': area,
+            'address': address,
         }
         
         return render(request, "core/quote5.html", context)
@@ -81,6 +88,7 @@ def quote6(request):
         selectedMaterial = request.POST.get('selectedMaterial')
         price = request.POST.get('price')
         area = request.POST.get('area')
+        address = request.POST.get('address')
         
         if request.user.is_authenticated:
             username = request.user.username
@@ -95,6 +103,7 @@ def quote6(request):
             selectedMaterial=selectedMaterial,
             price=price,
             area=area,
+            address=address,
         )
         quote.save()
 
