@@ -1,4 +1,5 @@
 let area = parseFloat(house_detail_sec.getAttribute('data-distance'));
+area = area * 10.7639;
 let selectedValue = parseFloat(house_detail_sec.getAttribute('data-value'));
 let initialLat = parseFloat(house_detail_sec.getAttribute('data-initlat'));
 let initialLng = parseFloat(house_detail_sec.getAttribute('data-initlng'));
@@ -21,4 +22,5 @@ if (houseSizeElement && materialSizeElement && priceElement) {
 document.querySelector('input[name="initialLat"]').value = initialLat;
 document.querySelector('input[name="initialLng"]').value = initialLng;
 document.querySelector('input[name="selectedMaterial"]').value = selectedMaterial;
+document.querySelector('input[name="area"]').value = area;
 document.querySelector('input[name="price"]').value = result;
